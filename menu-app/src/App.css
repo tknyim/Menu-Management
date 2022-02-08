@@ -1,0 +1,42 @@
+.menu h1 {
+  text-align: center;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 
+    repeat(auto-fit, 
+    minmax(12rem, 16rem));
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+.card-body {
+  transition: transform 200ms ease-in;
+  overflow: hidden;
+  box-shadow: 0 2px 20px gray;
+}
+
+.card :hover {
+  transform: scale(1.02);
+}
+
+.card-img {
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  padding: 5px;
+  text-align: center;
+}
+
+.card-description {
+  padding: 0 10px;
+}
+
+.card-price {
+  padding: 0 10px;
+  font-weight: bold;
+}
