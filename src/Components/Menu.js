@@ -1,20 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import { productData } from "./Data";
 import Card from "./Card";
 
 const Menu = () => {
-   const data = productData;
-
-
-
-    
-
+    const [data, setData] = useState(productData);
 
     return (
         <div className="card">
             {data.map((product) => {
                 return (
-                    <Card key={product.id} product={product}/>
+                    <Card 
+                        key={product.id} 
+                        product={product}
+                    />
                 )
             })}
         </div>
