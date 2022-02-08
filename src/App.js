@@ -1,5 +1,5 @@
 import React from 'react';
-import Cards from './Components/Cards';
+import Menu from './Components/Menu';
 import './App.css';
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
     <div className="menu">
       <h1>Menu</h1>
       <div>
-        <Cards />
+        <Menu />
       </div>
     </div>
   )
