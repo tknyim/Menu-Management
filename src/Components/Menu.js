@@ -1,9 +1,7 @@
-import React, {useState} from "react";
-import { productData } from "./Data";
+import React from "react";
 import Card from "./Card";
 
-const Menu = () => {
-    const [data, setData] = useState(productData);
+const Menu = ({data}) => {
 
     return (
         <div className="card">

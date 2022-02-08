@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
+import { productData } from "./Data";
 
-const AddModal = ({closeFoodMod}) => {
+const AddModal = ({closeFoodMod, handleAddImg, handleAddName, handleAddDesc, handleAddPrice, handleAddClick}) => {
+    
 
     return (
         <div className="food-modbg">
             <div 
                 className="food-modcon"
-                onSubmit={e => {
+                onChange={e => {
                     e.preventDefault()
                 }}
             >
@@ -17,6 +19,7 @@ const AddModal = ({closeFoodMod}) => {
                     type="text"
                     name="query"
                     placeholder="URL to image"
+                    onChange={handleAddImg}
                 />
                 <p className="food-modp">What is the name for this food:</p>
                 <input
@@ -24,13 +27,14 @@ const AddModal = ({closeFoodMod}) => {
                     type="text"
                     name="query"
                     placeholder="Name"
+                    onChange={handleAddName}
                 />
                 <p className="food-modp">What is the description for this food:</p>
-                <input
+                <textarea
                     className="food-modinput"
-                    type="text"
                     name="query"
                     placeholder="Description"
+                    onChange={handleAddDesc}
                 />
                 <p className="food-modp">What is the price for this food:</p>
                 <input
@@ -38,12 +42,12 @@ const AddModal = ({closeFoodMod}) => {
                     type="text"
                     name="query"
                     placeholder="Price"
+                    onChange={handleAddPrice}
                 />
                 <div className="food-btncon">
-                <button type="submit" className="food-submit">Submit</button>
+                <button type="submit" className="food-submit" onClick={handleAddClick}>Submit</button>
                 <button type="submit" className="food-cancel" onClick={()=>closeFoodMod(false)}>Cancel</button>
                 </div>
-                
             </div>
         </div>
     )

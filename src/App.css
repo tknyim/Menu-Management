@@ -38,6 +38,25 @@
   font-weight: bold;
 }
 
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-delete {
+  margin-top: 8px;
+  margin-right: 20px;
+  background-color: #f01624;
+  color: white;
+  font-weight: bold;
+  border: none;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
 /* Food Header */
 .menu {
   text-align: center;
