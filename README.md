@@ -1,6 +1,6 @@
 # Menu Management
 
-## Quick Overview:
+## Quick Overview
 This is a restaurant-menu project written in Reactjs Hooks. Users are allowed to create (by inserting a URL to a food image, name, description, and price), edit, and delete food item cards listed.
 
 
