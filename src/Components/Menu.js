@@ -11,6 +11,7 @@ const Menu = ({ data, deleteFood, editDataId, editFood, editCardId, setEditDataI
                     <>
                         {editDataId === product.id ? (
                             <Edit
+                                key={product.id}
                                 product={product}
                                 setEditDataId={setEditDataId}
                                 handleEditImg={handleEditImg}
