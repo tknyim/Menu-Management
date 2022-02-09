@@ -1,4 +1,5 @@
 import React from "react";
+
 const AddModal = ({closeFoodMod, handleAddImg, handleAddName, handleAddDesc, handleAddPrice, handleAddClick}) => {
     return (
         <div className="food-modbg">
