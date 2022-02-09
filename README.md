@@ -13,7 +13,7 @@ This is a restaurant-menu project written in Reactjs Hooks. Users are allowed to
   ```
   yarn start  ||  npm start
   ```
-  - The browser should be opened on a tab: "http://localhost:3000/
+  - The browser should be opened on a tab: "http://localhost:3000/"
 
 ## Task List
 - [x] Present a Menu as a series of Menu Item Cards
