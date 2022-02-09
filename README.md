@@ -3,6 +3,18 @@
 ## Quick Overview
 This is a restaurant-menu project written in Reactjs Hooks. Users are allowed to create (by inserting a URL to a food image, name, description, and price), edit, and delete food item cards listed.
 
+## Installation 
+1. Clone the repository (press the green "code" button on the top right)
+2. In root of the folder, on the console, install the dependencies needed for this app:
+  ```
+  npm install
+  ```
+3. Start the app via localhost onto the browser:
+  ```
+  yarn start  ||  npm start
+  ```
+  - The browser should be opened on a tab: "http://localhost:3000/
+
 ## Task List
 - [x] Present a Menu as a series of Menu Item Cards
 - [x] Present a control that enables users to remove a menu item
