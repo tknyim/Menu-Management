@@ -9,13 +9,14 @@ const App = () => {
   const [data, setData] = useState(productData);
   const [openFood, setOpenFood] = useState(false);
 
-
   const [foodImg, setFoodImg] = useState("");
   const [foodName, setFoodName] = useState("");
   const [foodDesc, setFoodDesc] = useState("");
   const [foodPrice, setFoodPrice] = useState();
 
   const foodId = Math.round(Math.random() * (100 - 10 + 1) + 10);
+
+  const [editDataId, setEditDataId] = useState();
 
   const handleAddImg = (e) => {
     setFoodImg(e.target.value);
@@ -30,7 +31,7 @@ const App = () => {
     setFoodPrice(e.target.value);
   };
 
-  const handleAddClick = (e) => {
+  const handleAddFood = (e) => {
     setData([...data, {
       id: foodId,
       img: foodImg,
@@ -43,16 +44,35 @@ const App = () => {
   };
 
   const handleDeleteFood = (id) => {
-    if (window.confirm("Are you sure you want to delete this item?") == true){
-    const newData = data.filter((item) => item.id !== id)
-    setData(newData);
+    if (window.confirm("Are you sure you want to delete this item?") == true) {
+      const newData = data.filter((item) => item.id !== id)
+      setData(newData);
     } else {
       return (
         false
       )
     }
   };
-  
+
+  const handleEditCardId = (e, item) => {
+    setEditDataId(item.id);
+  }
+
+  const handleEditFood = (e) => {
+    setData([...data, {
+      id: editDataId,
+      img: foodImg,
+      alt: foodName + "-edit",
+      name: foodName,
+      desc: foodDesc,
+      price: "$" + foodPrice
+    }]);
+    setEditDataId(null);
+  }
+
+  console.log(handleAddFood);
+  console.log(handleEditFood);
+  console.log(data)
 
   return (
     <div>
@@ -62,7 +82,7 @@ const App = () => {
         handleAddName={handleAddName}
         handleAddDesc={handleAddDesc}
         handleAddPrice={handleAddPrice}
-        handleAddClick={handleAddClick}
+        addFood={handleAddFood}
       />}
       <div className="menu">
         <h1>Food Menu</h1>
@@ -76,6 +96,14 @@ const App = () => {
         <Menu
           data={data}
           deleteFood={handleDeleteFood}
+          editDataId={editDataId}
+          editCardId={handleEditCardId}
+          setEditDataId={setEditDataId}
+          editFood={handleEditFood}
+          handleEditImg={handleAddImg}
+          handleEditName={handleAddName}
+          handleEditDesc={handleAddDesc}
+          handleEditPrice={handleAddPrice}
         />
       </div>
     </div>

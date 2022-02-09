@@ -9,12 +9,11 @@
 }
 
 .card-body {
-  transition: transform 200ms ease-in;
   overflow: hidden;
   box-shadow: 0 2px 20px gray;
 }
 
-.card :hover {
+.card-body:hover {
   transform: scale(1.02);
 }
 
@@ -62,7 +61,6 @@
   border: 2px solid rgba(237,88,42,255);
   color: rgba(237,88,42,255);
 }
-
 
 .card-delete {
   margin-top: 8px;
@@ -171,7 +169,6 @@
   color: #f01624;
 }
 
-
 .food-addbtn {
   background-color: rgba(237,88,42,255);
   color: white;
@@ -189,4 +186,77 @@
   background-color: white;
   border: 2px solid rgba(237,88,42,255);
   color: rgba(237,88,42,255);
+}
+
+/* edit */
+.edit-body {
+  overflow: hidden;
+  box-shadow: 0 2px 20px gray;
+}
+
+.edit-img {
+  height: 260px;
+  width: 100%;
+  background-color: gray;
+}
+
+.edit-iimg {
+  height: 260px;
+  width: 100%;
+  text-align: center;
+}
+
+.edit-iname {
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  font-size: small;
+  
+}
+
+.edit-idesc {
+  height: 125px;
+  width: 100%;
+  text-align: center;
+}
+
+.edit-iprice {
+  height: 25px;
+  width: 50%;
+  text-align: center;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+.edit-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-save {
+  margin-top: 8px;
+  margin-right: 10px;
+  background-color: rgba(237,88,42,255);
+  color: white;
+  font-weight: bold;
+  border: none;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.edit-cancel {
+  margin-top: 8px;
+  margin-right: 10px;
+  background-color: #f01624;
+  color: white;
+  font-weight: bold;
+  border: none;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 0.4s;
 }

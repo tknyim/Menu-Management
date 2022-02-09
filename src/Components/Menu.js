@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "./Card";
+import Edit from "./Edit";
 
-const Menu = ({data, deleteFood}) => {
+const Menu = ({ data, deleteFood, editDataId, editFood, editCardId, setEditDataId, handleEditImg, handleEditName, handleEditDesc, handleEditPrice}) => {
+
     return (
-        <div className="card">
+        <form className="card">
             {data.map((product) => {
                 return (
-                    <Card 
-                        key={product.id} 
-                        product={product}
-                        deleteFood={deleteFood}
-                    />
+                    <>
+                        {editDataId === product.id ? (
+                            <Edit
+                                product={product}
+                                setEditDataId={setEditDataId}
+                                handleEditImg={handleEditImg}
+                                handleEditName={handleEditName}
+                                handleEditDesc={handleEditDesc}
+                                handleEditPrice={handleEditPrice}
+
+                            />) : (
+                            <Card
+                                key={product.id}
+                                product={product}
+                                deleteFood={deleteFood}
+                                editCardId={editCardId}
+                                editFood={editFood}
+                            />)
+                        }
+                    </>
                 )
             })}
-        </div>
+        </form>
     )
 };
 
