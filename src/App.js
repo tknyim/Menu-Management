@@ -9,14 +9,13 @@ const App = () => {
   const [data, setData] = useState(productData);
   const [openFood, setOpenFood] = useState(false);
 
+
   const [foodImg, setFoodImg] = useState("");
   const [foodName, setFoodName] = useState("");
   const [foodDesc, setFoodDesc] = useState("");
   const [foodPrice, setFoodPrice] = useState();
 
   const foodId = Math.round(Math.random() * (100 - 10 + 1) + 10);
-
-  console.log(foodId);
 
   const handleAddImg = (e) => {
     setFoodImg(e.target.value);
@@ -38,13 +37,21 @@ const App = () => {
       alt: foodName + "-prod",
       name: foodName,
       desc: foodDesc,
-      price: foodPrice
+      price: "$" + foodPrice
     }]);
     setOpenFood(false);
-  }
-  console.log(handleAddClick);
-  console.log(data);
+  };
 
+  const handleDeleteFood = (id) => {
+    if (window.confirm("Are you sure you want to delete this item?") == true){
+    const newData = data.filter((item) => item.id !== id)
+    setData(newData);
+    } else {
+      return (
+        false
+      )
+    }
+  };
 
   return (
     <div>
@@ -67,6 +74,7 @@ const App = () => {
       <div>
         <Menu
           data={data}
+          deleteFood={handleDeleteFood}
         />
       </div>
     </div>

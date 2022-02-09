@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 
-const Menu = ({data}) => {
+const Menu = ({data, deleteFood}) => {
 
     return (
         <div className="card">
@@ -10,6 +10,7 @@ const Menu = ({data}) => {
                     <Card 
                         key={product.id} 
                         product={product}
+                        deleteFood={deleteFood}
                     />
                 )
             })}

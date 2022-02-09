@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-import { productData } from "./Data";
+import React from "react";
 
 const AddModal = ({closeFoodMod, handleAddImg, handleAddName, handleAddDesc, handleAddPrice, handleAddClick}) => {
     
@@ -39,9 +38,9 @@ const AddModal = ({closeFoodMod, handleAddImg, handleAddName, handleAddDesc, han
                 <p className="food-modp">What is the price for this food:</p>
                 <input
                     className="food-modinput"
-                    type="text"
+                    type="number"
                     name="query"
-                    placeholder="Price"
+                    placeholder="Price (Don't need to add '$')"
                     onChange={handleAddPrice}
                 />
                 <div className="food-btncon">
