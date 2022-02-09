@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "./Card";
 import Edit from "./Edit";
 
@@ -17,14 +17,13 @@ const Menu = ({ data, deleteFood, editDataId, editFood, editCardId, setEditDataI
                                 handleEditName={handleEditName}
                                 handleEditDesc={handleEditDesc}
                                 handleEditPrice={handleEditPrice}
-
+                                editFood={editFood}
                             />) : (
                             <Card
                                 key={product.id}
                                 product={product}
                                 deleteFood={deleteFood}
                                 editCardId={editCardId}
-                                editFood={editFood}
                             />)
                         }
                     </>

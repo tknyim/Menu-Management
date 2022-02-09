@@ -59,20 +59,19 @@ const App = () => {
   }
 
   const handleEditFood = (e) => {
-    setData([...data, {
-      id: editDataId,
-      img: foodImg,
+    const foundId = data.findIndex((item) => { return item.id == editDataId})
+    data[foundId] = {
+      img: foodImg || data[foundId].img,
       alt: foodName + "-edit",
-      name: foodName,
-      desc: foodDesc,
-      price: "$" + foodPrice
-    }]);
+      name: foodName || data[foundId].name,
+      desc: foodDesc || data[foundId].desc,
+      price: "$" + foodPrice || data[foundId].price
+    };
+    setData(data)
     setEditDataId(null);
+    console.log(foundId);
   }
 
-  console.log(handleAddFood);
-  console.log(handleEditFood);
-  console.log(data)
 
   return (
     <div>

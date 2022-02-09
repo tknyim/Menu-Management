@@ -179,6 +179,7 @@
   padding: 0px;
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom: 10px;
   transition-duration: 0.4s;
 }
 
