@@ -69,7 +69,6 @@ const App = () => {
     };
     setData(data)
     setEditDataId(null);
-    console.log(foundId);
   }
 
 
